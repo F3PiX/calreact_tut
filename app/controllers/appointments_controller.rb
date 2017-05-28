@@ -8,6 +8,7 @@ class AppointmentsController < ApplicationController
   
   def create
     @appointments = Appointment.order('slot ASC')
+    #In learnetto this is Appointment.create(...)
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
       redirect_to action: :index
