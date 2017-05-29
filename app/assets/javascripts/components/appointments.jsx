@@ -4,10 +4,8 @@ var Appointments = React.createClass({
           <div>
               {this.props.appointments.map(function (appointment) {
                   return (
-                      <div>
-                          <h3>{appointment.event}</h3>
-                          <p>{appointment.slot}</p>
-                      </div>
+                    <Appointment appointment={appointment} />
+
                   )
               })}
           </div>
