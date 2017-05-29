@@ -2,18 +2,25 @@ var Appointments = React.createClass({
   getInitialState: function () {
     return {
       appointments: this.props.appointments,
-      input_event: 'what?',
-      input_slot: 'when...?'
+      event: '',
+      slot: ''
     }
+  },
+
+  handleUserInput: function(obj) {
+    this.setState(obj);
   },
 
   render: function () {
     return (
       <div>
         <AppointmentForm
-          input_event={this.state.input_event}
-          input_slot={this.state.input_slot} />
-        <AppointmentsList appointments={this.props.appointments} />
+          input_event={this.state.event}
+          input_slot={this.state.slot}
+          onUserInput={this.handleUserInput}
+        />
+        <AppointmentsList appointments={this.state.appointments} />
+        /* ^ this is now state instead of props, maybe that belongs to previous commit */
       </div>
     )
   }
