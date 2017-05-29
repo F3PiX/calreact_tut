@@ -1,18 +1,18 @@
 <%#= react_component('Appointments') %>
 <h1>React calendar tut</h1>
 
-<h2>Appointments (events)</h2>
-
-<h3>New event</h3>
 <!--This is the rails way. Replace this:-->
-<%#= form_for @appointment, remote: true do |f| %>
-  What? <%#= f.text_field :event%><br />
-  When? <%#= f.datetime_select :slot%><br />
-  <%#= f.submit 'Add this appointment' %>
-<%# end %>
+<!--<h2>Appointments (events)</h2>-->
 
-<%#= render 'appointments' %>
+<!--<h3>New event</h3>-->
+<!--<%#= form_for @appointment, remote: true do |f| %>-->
+  <!--What? <%#= f.text_field :event%><br />-->
+  <!--When? <%#= f.datetime_select :slot%><br />-->
+  <!--<%#= f.submit 'Add this appointment' %>-->
+<!--<%# end %>-->
+
+<!--<%#= render 'appointments' %>-->
 
 
-<!--with this: ("pass it a prop call appointments-->
+<!--with this: ("pass it a prop called appointments-->
 <%= react_component('Appointments', appointments: @appointments) %>
