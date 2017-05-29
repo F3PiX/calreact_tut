@@ -4,11 +4,15 @@
 <h2>Appointments (events)</h2>
 
 <h3>New event</h3>
+<!--This is the rails way. Replace this:-->
+<%#= form_for @appointment, remote: true do |f| %>
+  What? <%#= f.text_field :event%><br />
+  When? <%#= f.datetime_select :slot%><br />
+  <%#= f.submit 'Add this appointment' %>
+<%# end %>
 
-<%= form_for @appointment, remote: true do |f| %>
-  What? <%= f.text_field :event%><br />
-  When? <%= f.datetime_select :slot%><br />
-  <%= f.submit 'Add this appointment' %>
-<% end %>
+<%#= render 'appointments' %>
 
-<%= render 'appointments' %>
+
+<!--with this: ("pass it a prop call appointments-->
+<%= react_component('Appointments', appointments: @appointments) %>
