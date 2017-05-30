@@ -1,9 +1,9 @@
 class AppointmentsController < ApplicationController
    skip_before_action :verify_authenticity_token
-  #I dont want this, but I want to go on with the tut
+  # I dont want this, but I want to go on with the tut
   
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.all.earliest_first
     @appointment = Appointment.new
   end
   
