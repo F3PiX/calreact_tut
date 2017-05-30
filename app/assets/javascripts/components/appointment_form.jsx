@@ -20,7 +20,7 @@ var AppointmentForm = React.createClass({
         <form onSubmit={this.handleSubmit}>
           <input name="event" placeholder="What?"
              value={this.props.event}
-             onChange={this.handleChange}   />
+             onChange={this.handleChange} />
           <input name="slot" placeholder="When?"
              value={this.props.slot}
              onChange={this.handleChange}
