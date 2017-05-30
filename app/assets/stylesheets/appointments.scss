@@ -19,3 +19,17 @@ h1 {
 h3 {
   color: blueviolet;
 }
+
+.event {
+  padding-top: 10px;
+  border-bottom: solid 0.5px #6a5acd;
+}
+.btn {
+  background: lightgray;
+  color: blueviolet;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  font-size: 0.8em;
+  padding: 10px;
+}

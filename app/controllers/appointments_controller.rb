@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-   skip_before_action :verify_authenticity_token
+   # skip_before_action :verify_authenticity_token
   # I dont want this, but I want to go on with the tut
   
   def index

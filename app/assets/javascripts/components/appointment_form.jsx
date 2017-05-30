@@ -16,7 +16,7 @@ var AppointmentForm = React.createClass({
   render: function() {
     return (
       <div>
-        <h3>Add an appointment</h3>
+
         <form onSubmit={this.handleSubmit}>
           <input name="event" placeholder="What?"
              value={this.props.event}
@@ -25,7 +25,7 @@ var AppointmentForm = React.createClass({
              value={this.props.slot}
              onChange={this.handleChange}
           />
-          <input type="submit" value="Add to calendar"/>
+          <input type="submit" value="Add this appointment" className="btn" />
         </form>
       </div>
     )

@@ -12,11 +12,10 @@ var Appointments = React.createClass({
   },
 
   handleFormSubmit: function() {
-    // var csrfToken = $('[name="csrf-token"]').attr('content');
-    // , _csrf_token: csrfToken
+    var csrfToken = $('[name="csrf-token"]').attr('content');
     var appointment = {event: this.state.event, slot: this.state.slot};
 
-    $.post('appointments',{appointment: appointment})
+    $.post('appointments',{appointment: appointment, 'authenticity_token': csrfToken})
     .done(function(data) {
       this.addNewAppointment(data);
     }.bind(this));
