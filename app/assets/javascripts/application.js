@@ -10,12 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// added by react-rails generator: react, react_ujs and components
+// added by me: jquery, moment
+
 //= require rails-ujs
 //= require turbolinks
 //= require jquery
-// added by react-rails generator:
+//= require jquery_ujs
 //= require react
 //= require react_ujs
+//= require moment/moment
 //= require components
 
 //= require_tree .
