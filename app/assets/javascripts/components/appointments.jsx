@@ -14,16 +14,7 @@ var Appointments = React.createClass({
   handleFormSubmit: function() {
     var csrfToken = $('[name="csrf-token"]').attr('content');
     var appointment = {event: this.state.event, slot: this.state.slot};
-    // This is the verbose version, and works as well:
-    // $.ajax({
-    //   method: 'POST',
-    //   url: '/appointments',
-    //   data: { appointment: appointment, '_csrf_token': csrfToken },
-    //   dataType: 'JSON'
-    // })
-    // .done(cb)
-    // .fail(cb);
-    // //
+
     $.post('appointments',{appointment: appointment, _csrf_token: csrfToken})
     .done(function(data) {
       this.addNewAppointment(data);
