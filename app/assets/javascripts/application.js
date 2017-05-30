@@ -12,7 +12,8 @@
 //
 //= require rails-ujs
 //= require turbolinks
-// added by react generator:
+//= require jquery
+// added by react-rails generator:
 //= require react
 //= require react_ujs
 //= require components

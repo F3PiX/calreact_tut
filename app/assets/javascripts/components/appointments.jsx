@@ -1,5 +1,5 @@
 var Appointments = React.createClass({
-  getInitialState: function () {
+  getInitialState: function() {
     return {
       appointments: this.props.appointments,
       event: '',
@@ -11,16 +11,40 @@ var Appointments = React.createClass({
     this.setState(obj);
   },
 
-  render: function () {
+  handleFormSubmit: function() {
+    var csrfToken = $('[name="csrf-token"]').attr('content');
+    var appointment = {event: this.state.event, slot: this.state.slot};
+    // This is the verbose version, and works as well:
+    // $.ajax({
+    //   method: 'POST',
+    //   url: '/appointments',
+    //   data: { appointment: appointment, '_csrf_token': csrfToken },
+    //   dataType: 'JSON'
+    // })
+    // .done(cb)
+    // .fail(cb);
+    // //
+    $.post('appointments',{appointment: appointment, _csrf_token: csrfToken})
+    .done(function(data) {
+      this.addNewAppointment(data);
+    }.bind(this));
+  },
+
+  addNewAppointment: function(appointment) {
+    var appointments = React.addons.update(this.state.appointments, { $push: [appointment]});
+    this.setState({ appointments: appointments});
+  },
+
+  render: function() {
     return (
       <div>
         <AppointmentForm
-          input_event={this.state.event}
-          input_slot={this.state.slot}
+          event={this.state.event}
+          slot={this.state.slot}
           onUserInput={this.handleUserInput}
+          onFormSubmit={this.handleFormSubmit}
         />
         <AppointmentsList appointments={this.state.appointments} />
-        /* ^ this is now state instead of props, maybe that belongs to previous commit */
       </div>
     )
   }

@@ -1,17 +1,18 @@
 class AppointmentsController < ApplicationController
+   skip_before_action :verify_authenticity_token
+  #I dont want this, but I want to go on with the tut
   
   def index
     @appointments = Appointment.all
     @appointment = Appointment.new
-    
   end
   
   def create
-    @appointments = Appointment.order('slot ASC')
-    #In learnetto this is Appointment.create(...)
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
-      redirect_to action: :index
+      render json: @appointment
+    else
+      render json: @appointment.errors, status: :unprocessable_entity
     end
   end
   
