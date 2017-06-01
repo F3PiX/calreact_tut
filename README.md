@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+React & Rails course
+https://learnetto.com/course_parts/655
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+With a few changes: made with Rails 5.1, ruby 2.4.0. 
+`yarn install jQuery-ujs`, because I didn't know yet about `Rails.ajax` voor ajax calls
+And other adjustments for upgraded stack
